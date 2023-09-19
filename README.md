@@ -2,9 +2,9 @@
 ## 2차 과제
 이번 주 과제는, 지난 시간에 배웠던 swift 문법을 바탕으로 준비된 문제를 풀어주시면 됩니다.
 
-📌 HW2 폴더에 있는 .playground 파일을 **fork** 하셔서 문제를 풀어주세요. (반드시 fork 해주세요!)
+📌 HW2 폴더에 있는 .playground 파일을 **Download** 하셔서 문제를 풀어주세요.
 <br>
-📌 fork 후, 완성한 문제를 **본인 레파지토리 / HW2 / .playground** 의 위치에 오도록 push해주세요.
+📌 Download 후, 완성한 문제를 **본인 레파지토리 / HW2 / .playground** 의 위치에 오도록 push해주세요.
 
 <br>
 
