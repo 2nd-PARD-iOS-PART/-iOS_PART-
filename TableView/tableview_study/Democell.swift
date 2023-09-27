@@ -16,8 +16,8 @@ class Democell : UITableViewCell{
         super.init(style: style, reuseIdentifier: "cell")
         contentView.addSubview(textlabel)
         setUplabel()
-        
     }
+    
     func setUplabel(){
         textlabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

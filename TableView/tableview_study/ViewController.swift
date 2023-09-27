@@ -15,8 +15,6 @@ class ViewController: UIViewController {
     // cell또한 custom 해주면 됩니다!!!
     // 말로는 간단한데.. 생각보다 많은 걸 요구함.. start!!!
     
-    //let footerlabel = UILabel();
-    
     private let tableView = UITableView();
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,11 +88,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
         return Model.medeling.count
     }
-    // cell의 갯수 item!!
+    // cell의 갯수 item!! // 필수함수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Model.medeling[section].count
     }
-    // tableView의 cell에 어떤 데이터가 들어갈지 코드로 만들어 주었다.
+    // tableView의 cell에 어떤 데이터가 들어갈지 코드로 만들어 주었다. //필수함수
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? Democell
             else{
