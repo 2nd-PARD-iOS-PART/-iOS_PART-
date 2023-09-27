@@ -35,19 +35,38 @@ import UIKit
 class MyViewController: UIViewController{
     let cellidentifier = "cell"
    
+    let label : UILabel = {
+        let label = UILabel()
+        //자동 오토레이징 마스크제한 팔스
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "PARD"
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.textAlignment = .center
+        // labelview의 외부 데코레이션
+        label.layer.cornerRadius = 25
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.gray.cgColor
+        return label
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        //추가된 부분
+        collectionview.dataSource = self
+        collectionview.delegate = self
         
         collectionview.register(CustomCell.self, forCellWithReuseIdentifier: cellidentifier)
-
+        
+        view.addSubview(label)
         view.addSubview(collectionview)
       
         setUP()
     }
     let collectionview : UICollectionView = {
         //새로 추가
-        let collectionview = UICollectionView()
+        let flowlayout = UICollectionViewFlowLayout()
+        let collectionview = UICollectionView(frame: .infinite, collectionViewLayout: flowlayout)
         //새로 추가
         collectionview.backgroundColor = .white
         collectionview.translatesAutoresizingMaskIntoConstraints = false
@@ -60,6 +79,13 @@ class MyViewController: UIViewController{
             collectionview.widthAnchor.constraint(equalToConstant: view.bounds.width),
             collectionview.heightAnchor.constraint(equalToConstant: view.bounds.height / 2.0),
         ]
+        let labelConstraints = [
+            label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.widthAnchor.constraint(equalToConstant: 100),
+            label.heightAnchor.constraint(equalToConstant: 50),
+        ]
+        NSLayoutConstraint.activate(labelConstraints)
         NSLayoutConstraint.activate(collectioviewConstraints)
     }
    
@@ -73,7 +99,7 @@ extension MyViewController: UICollectionViewDelegate, UICollectionViewDataSource
             print("error using collectioview")
             return UICollectionViewCell()
         }
-
+        cell.backgroundColor = .white
         let target = Model.ModelData[indexPath.item]
         let image = UIImage(named: "\(target.image).jpeg")
         cell.imageView.image = image

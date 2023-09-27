@@ -27,9 +27,6 @@ class ViewController: UIViewController {
         view.addSubview(tableView)
         setTableview()
         setHeader()
-        
-        
-        
     }
     func setHeader(){
         let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
@@ -69,7 +66,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
-    //section의 footter
+    //section의 footer
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let customView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
         customView.backgroundColor = .gray
@@ -103,7 +100,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         
         cell.textlabel.text = data.title
         cell.layer.cornerRadius = 10
+        cell.layer.borderWidth = 3
         cell.layer.borderColor = UIColor.secondaryLabel.cgColor
+        
 
         return cell
     }

@@ -10,6 +10,10 @@ import UIKit
 class CustomCell: UICollectionViewCell {
     let imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        
+        
         return imageView
     }()
     let label: UILabel = {
@@ -39,6 +43,7 @@ class CustomCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -50),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
             ]
         )
@@ -47,6 +52,7 @@ class CustomCell: UICollectionViewCell {
             label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 5),
             label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
             ]
         )
     }

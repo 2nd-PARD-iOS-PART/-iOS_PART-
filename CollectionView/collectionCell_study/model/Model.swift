@@ -18,7 +18,11 @@ struct Model{
 extension Model{
     
     static var ModelData = [
-        Model(title: "name", image: "Image"),
+        Model(title: "name", image: "pard"),
+        Model(title: "iOS", image: "apple"),
+        //이 부분 고쳐줘야 합니다!!
+        Model(title: "bear", image: "bear"),
+        Model(title: "flower", image: "flower"),
     ]
 }
 #endif

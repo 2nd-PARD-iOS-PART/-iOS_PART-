@@ -9,6 +9,7 @@ import UIKit
 
 class Democell : UITableViewCell{
     let textlabel = UILabel()
+    let addImage = UIImage()
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
