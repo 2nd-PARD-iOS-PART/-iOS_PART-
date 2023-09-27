@@ -11,15 +11,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         makeUI();
     }
 
     private lazy var nextButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.backgroundColor = .black
+        button.backgroundColor = .systemBlue //
         button.tintColor = .white
-        button.setTitle("LOGIN", for: .normal)
+        button.setTitle("JOIN US", for: .normal) //
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
@@ -42,20 +41,21 @@ class ViewController: UIViewController {
         let vc2 = SecondViewController()
         let vc3 = ThirdViewControllerr()
         
-        vc1.title = "First"
-        vc2.title = "nice"
-        vc3.title = "happy"
+        //
+        vc1.title = "iOS"
+        vc2.title = "PARD"
+        vc3.title = "LOVE"
         
         tabBarVC.setViewControllers([vc1, vc2, vc3], animated: true)
-        tabBarVC.modalPresentationStyle = .fullScreen
-        tabBarVC.tabBar.backgroundColor = .lightGray
+        tabBarVC.modalPresentationStyle = .formSheet //
+        tabBarVC.tabBar.backgroundColor = .black //
         
         // 아이템이 있으면 아이템을, 없으면 else문을 반환한다.
         guard let items = tabBarVC.tabBar.items else { return }
         // tabBarVC에 있는 배열에 순서대로 접근하여 각 아이템에 접근
-        items[0].image = UIImage(systemName: "square.and.arrow.up")
-        items[1].image = UIImage(systemName: "arrowshape.right")
-        items[2].image = UIImage(systemName: "bookmark.circle.fill")
+        items[0].image = UIImage(systemName: "apple.logo")?.withTintColor(.white) //
+        items[1].image = UIImage(systemName: "figure.surfing")?.withTintColor(.white) //
+        items[2].image = UIImage(systemName: "heart.fill")?.withTintColor(.white) //
     
         present(tabBarVC, animated: true, completion: nil)
     }

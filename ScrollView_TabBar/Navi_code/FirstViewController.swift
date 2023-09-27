@@ -14,38 +14,27 @@ class FirstViewController: UIViewController{
         makeUi()
     }
     
-    // 네비게이션 바를 코드로 설정하기
+    // MARK: - navigationbar 만들기
     func makeUi() {
-        view.backgroundColor = .systemYellow
-        
-        // 네비게이션 바의 틴트 색상을 파란색으로 설정합니다.
-//        navigationController?.navigationBar.tintColor = .blue
+        view.backgroundColor = .white
         
         let navigationBarAppearance = UINavigationBarAppearance()
-        // UINavigationBarAppearance 객체를 생성하고 네비게이션 바의 불투명한 배경 설정을 준비합니다.
+        // UINavigationBarAppearance 객체를 생성하고 네비게이션 바의 불투명한 배경 설정
         navigationBarAppearance.configureWithOpaqueBackground()
-
-        // 각 뷰 컨트롤러의 네비게이션 바 외관을 설정합니다.
         navigationItem.scrollEdgeAppearance = navigationBarAppearance
-        
-        // scroll이 될 때 네비게이션 바의 색상을 brown으로 설정합니다.
-        navigationBarAppearance.backgroundColor = .brown
+        // scroll 시 네비게이션바 색상 바꾸기
+        navigationBarAppearance.backgroundColor = .systemIndigo
         navigationItem.standardAppearance = navigationBarAppearance
         
         
-        // MARK: - 3. compactAppearance
-//        navigationItem.compactAppearance = navigationBarAppearance
-        
-
-        // 네비게이션 컨트롤러의 상태 바 외관이 변경되었을 때, 상태 바를 새로고침(refresh)하도록 요청하는 메서드입니다. iOS 앱은 상태 바에 시간, 배터리 상태 등을 표시합니다. 네비게이션 컨트롤러의 상태 바 외관을 변경하거나 업데이트할 때, 시스템은 이 메서드를 호출하여 상태 바의 외관을 업데이트합니다.
-        // 일반적으로, 네비게이션 바의 불투명성, 배경색, 이미지 등의 외관을 변경하려면 변경한 후에 setNeedsStatusBarAppearanceUpdate() 메서드를 호출하여 변경 사항이 상태 바에 반영되도록 합니다.
+        // 네비게이션 컨트롤러의 상태 바 외관이 변경되었을 때, 상태 바를 새로고침(refresh)하도록 요청하는 메서드. iOS 앱은 상태 바에 시간, 배터리 상태 등을 표시하기 때문에 네비게이션 컨트롤러의 상태 바 외관을 변경하거나 업데이트할 때, 시스템은 이 메서드를 호출헤서 상태 바의 외관을 업데이트한다.
+        // 일반적으로, 네비게이션 바를 변경하려면 변경한 후에 setNeedsStatusBarAppearanceUpdate() 메서드를 호출하여 변경 사항이 상태 바에 반영되도록 헤야 한다.
         navigationController?.setNeedsStatusBarAppearanceUpdate()
-
         navigationController?.navigationBar.isTranslucent = false
         
         title = "First"
         
-        // MARK: - 이 지점 윗 부분은 수정하지 않음
+        // MARK: - scrollView
         let myScrollView = UIScrollView()
         myScrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(myScrollView)
@@ -61,7 +50,7 @@ class FirstViewController: UIViewController{
         // MARK: - 스크롤뷰 content 추가
         let contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.backgroundColor = .systemYellow
+        contentView.backgroundColor = .white
         myScrollView.addSubview(contentView)
         
         // MARK: - contentView의 오토레이아웃 설정
@@ -78,10 +67,10 @@ class FirstViewController: UIViewController{
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD Welcome to PARD"
         label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .black
         label.numberOfLines = 0
         
         // MARK: - 스크롤 방향 설정
-//        label.setContentCompressionResistancePriority(.required, for: .vertical)
         contentView.addSubview(label)
         
         let imageView = UIImageView(image: UIImage(named: "flower"))
