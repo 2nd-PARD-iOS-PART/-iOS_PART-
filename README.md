@@ -15,7 +15,7 @@
 
 
 ## README.md 작성 방법
-⭐️ [해당 페이지](http://www.google.co.kr](https://github.com/2nd-PARD-iOS-PART/-iOS_PART-/blob/main/readme%ED%8C%8C%EC%9D%BC%20%ED%98%95%EC%8B%9D.md)https://github.com/2nd-PARD-iOS-PART/-iOS_PART-/blob/main/readme%ED%8C%8C%EC%9D%BC%20%ED%98%95%EC%8B%9D.md)에 형식을 만들어뒀습니다. 그대로 복사해서 사용해도 괜찮아요 !
+⭐️ [해당 페이지](https://github.com/2nd-PARD-iOS-PART/-iOS_PART-/blob/main/readme%ED%8C%8C%EC%9D%BC%20%ED%98%95%EC%8B%9D.md)에 형식을 만들어뒀습니다. 그대로 복사해서 사용해도 괜찮아요 !
 
 ⭐️ 마크다운이 어렵다면, 파트장에게 언제든 알려주세요 !
 
