@@ -158,8 +158,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = .white
         return cell
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return member.count
     }
-   
 }

@@ -1,6 +1,7 @@
-// Created by byo.
+
 
 import UIKit
+import RealmSwift
 
 class MemoListViewController: UIViewController {
     var memos: [MemoModel] = [] {
@@ -101,3 +102,4 @@ extension MemoListViewController: MemoFormViewControllerDelegate {
         }
     }
 }
+
