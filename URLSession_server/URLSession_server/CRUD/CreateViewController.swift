@@ -133,7 +133,7 @@ class CreateViewController: UIViewController, UIImagePickerControllerDelegate, U
             return
         }
         // 우리가 연결해야 하는 서버 주소
-        let url = URL(string: "http://3.35.236.83/image")!
+        let url = URL(string: "http://172.17.210.248:8080/image")!
         // request 생성하기
         var request = URLRequest(url: url)
         // 방법 설정 : POST (서버에 게시하겠다는 것)

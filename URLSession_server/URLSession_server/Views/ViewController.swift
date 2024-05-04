@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import WebKit
 
+let url = "http://172.17.210.248:8080"
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var pardData: PardData? //초기값을 모르기 때문에 옵셔널 ? 붙여준다.
-    let urlLink = "http://3.35.236.83/pard/all" // 서버 주소 _ read를 위한
+    let urlLink = "\(url)/pard/all" // 서버 주소 _ read를 위한
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -18,7 +20,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cv.register(UrlCollectionViewCell.self, forCellWithReuseIdentifier: "UrlCollectionViewCell")
         return cv
     }()
-    
+    var webView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUi()
@@ -27,7 +29,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // notificationCenter에 observer 추가하기
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: .addNotification, object: nil)
     }
-    
     @objc func reloadCollectionView() {
         DispatchQueue.main.async {
             self.getData()
@@ -71,7 +72,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     // add버튼 추가 시, 추가하기 위한 모달창이 뜬다.
     @objc func addButtonTapped(){
         let addDataVC = CreateViewController()
+        getData()
         print("button tapped")
+       
         self.present(addDataVC, animated: true, completion: nil)
     }
     
@@ -123,6 +126,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                             // reloadData를 써주면 된다. 다시 로드하기 위함.
                             self.collectionView.reloadData()
                         }
+                        print("✅ success")
                     } catch let error as NSError {
                         print("🚨", error)
                     }
@@ -170,5 +174,3 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
 }
-
-

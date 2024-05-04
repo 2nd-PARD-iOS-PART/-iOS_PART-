@@ -153,7 +153,7 @@ class UpdateViewController: UIViewController, UIImagePickerControllerDelegate, U
             print("Failed to convert image to data")
             return
         }
-        let url = URL(string: "http://3.35.236.83/image")!
+        let url = URL(string: "http://172.17.210.248:8080/image")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
 
@@ -201,7 +201,8 @@ class UpdateViewController: UIViewController, UIImagePickerControllerDelegate, U
         detailAge.text = "age: \(age ?? "null")"
         detailPart.text = "part: \(part ?? "null")"
         // '수정하기' 버튼 클릭시, 서버에 Update하는 함수 호출하기
-        makeUpdateRequest(with: name!, name: name!, age: intAge!, part: part!, imgUrl: convertedImgView)
+//        makeUpdateRequest(with: name!, name: name!, age: intAge!, part: part!, imgUrl: convertedImgView)
+//        makeUpdateRequest(with: name!, name: name!, age: intAge!, part: part!, imgUrl: convertedImgView)
         dismiss(animated: true)
     }
 }

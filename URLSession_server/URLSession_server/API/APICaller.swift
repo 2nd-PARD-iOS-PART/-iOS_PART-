@@ -9,12 +9,11 @@ import UIKit
 
 var pardData: PardData? //초기값도 모르기 때문에 옵셔널 ? 붙여준다.
 
-let urlLink = "http://3.35.236.83/pard/all" // 서버 주소
 
 // MARK: - Create _ 데이터를 서버에 추가하는 함수
 func makePostRequest(with imgUrl: String, name: String, age: Int, part: String) {
     // 서버 링크가 유요한지 확인
-    guard let url = URL(string: "http://3.35.236.83/pard/join") else {
+    guard let url = URL(string: "\(url)/pard/join") else {
         print("🚨 Invalid URL")
         return
     }
@@ -64,7 +63,7 @@ func makeUpdateRequest(with idName: String, name: String, age: Int, part: String
         return
     }
 
-    let urlString = "http://3.35.236.83/pard/update/\(encodedName)"
+    let urlString = "\(url)/pard/update/\(encodedName)"
 
     guard let url = URL(string: urlString) else {
         print("🚨 Invalid URL")
@@ -105,7 +104,7 @@ func makeUpdateRequest(with idName: String, name: String, age: Int, part: String
 }
 
 func deleteRequest(name: String) {
-    let urlString = "http://3.35.236.83/pard/delete/\(name)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    let urlString = "\(url)/pard/delete/\(name)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
     
     guard let url = URL(string: urlString!) else {
         print("🚨 Invalid URL")
